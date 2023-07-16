@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Transactional
+@Transactional //반드시 명시(jpa사용시)
 public class MemberService {
     private final MemberRepository memberRepository;
     @Autowired
@@ -19,6 +19,7 @@ public class MemberService {
     /*
     * 회원가입
     * */
+    @Transactional
     public Long join(Member member){
 
         validdateDuplicateMember(member);
